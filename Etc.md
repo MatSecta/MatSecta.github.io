@@ -1,7 +1,7 @@
 # Кружки. Разное
 
 
- * Академия Спидкубинга, vk.com/speedcubing.academy
+ * Академия Спидкубинга, [vk.com/speedcubing.academy](vk.com/speedcubing.academy)
 
  * [Advance - Центр образовательных технологий Николая Ягодкина](https://advance-club.ru) 
 
