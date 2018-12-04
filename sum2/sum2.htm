@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Сумма</title>
+
+<style>
+
+.main { 
+	font-size: 50px; 
+	margin-top: 20px;
+
+	padding: 50px;
+	padding-left: 150px;
+	padding-right: 150px;
+}
+
+.lev { 
+	font-size: 20px; 
+	margin-top: 0px;
+	margin-left: 20px;
+	padding: 20px;
+}
+
+
+input { 
+	font-size: 90px; 
+	width: 100 px;
+	margin-left: 20px;
+	padding: 10px;
+}
+
+#text { 
+	font-family: Arial;
+	font-size: 120px; 
+	color: blue;
+	margin-top: 50px;
+	padding: 10px;
+}
+
+
+button:hover {
+	background-color: orange;
+} 
+
+</style>
+
+</head>
+<body>
+
+<center>
+
+<h1 id="h1">1. Сложение чисел до 10</h1>
+
+<hr>
+
+<button class="lev" id="r1">1</button>
+<button class="lev" id="r2">2</button>
+<button class="lev" id="r3">3</button>
+<button class="lev" id="r4">4</button>
+<button class="lev" id="r5">5</button>
+<button class="lev" id="r6">6</button>
+<button class="lev" id="r7">7</button>
+<button class="lev" id="r8">8</button>
+
+<hr>
+
+
+<div id="text">
+<span id="task">5 + 5 = </span>
+<input type=text id="inp" size="1"></inpit>
+</div>
+<br>
+
+<button class="main" id="check">Ответ</button>
+
+<br><br>
+
+<div id="code"></div>
+<div id="out"></div>
+<div id="lev"></div>
+
+<hr>
+
+<img id="pic" src="" width="100">
+
+</center>
+
+<audio id="ok1" src="ok1.ogg"></audio>
+<audio id="ok2" src="ok2.ogg"></audio>
+<audio id="ok3" src="ok3.ogg"></audio>
+<audio id="ok4" src="ok4.ogg"></audio>
+<audio id="ok5" src="ok5.ogg"></audio>
+
+<audio id="err1" src="err1.ogg"></audio>
+<audio id="err2" src="err2.ogg"></audio>
+<audio id="err3" src="err3.ogg"></audio>
+<audio id="err4" src="err4.ogg"></audio>
+<audio id="err5" src="err5.ogg"></audio>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script>
+
+// Число звуков
+var NOK = 5;
+
+// Уровень
+var LEV = 1;
+
+// Номер задачи в массиве задач
+var NUM = 0;
+
+// Число решенных упражнений
+var NE = -1;
+
+// Первое слагаемое
+var S1 = 1;
+
+// Второе слагаемое
+var S2 = 1;
+
+// Результат
+var R = +S1 + S2;
+
+var OUT = '';
+
+var tit = [];
+
+var SS = [];
+
+tit[1] = 'Сложение чисел до 10';
+tit[2] = 'Переход через десяток';
+tit[3] = 'Сложение до 20';
+tit[4] = 'Сложение десятками до 100';
+tit[5] = 'Сложение до 100';
+tit[6] = 'Сложение сотнями до 1000';
+tit[7] = 'Сложение чисел до 1000';
+tit[8] = 'Умножение до 10';
+
+
+$(function() {
+
+	set_lev();
+
+//	s22 = JSON.parse(s22);
+
+//	MAX = s22.length - 1;
+//	s22.sort(compareRandom);
+
+//	if(NUM == 0) next();
+
+    $("[id ^= r]").click(function(e){
+
+		var n = e.target.id;
+		var t = e.target.textContent;
+
+		LEV = t;
+//		$("#lev").text(LEV);
+
+		set_lev();
+
+// Заголовок
+		$("#h1").text(tit[LEV]);
+// Оменить выделение для всех
+		$(".lev").css("background-color", "");
+// Назначить выделение для одного
+		$("#r" + LEV).css("background-color", "orange");
+
+	});
+
+    $("#check").click(function(){
+
+		var res = $("#inp").val();
+
+// Фильтровать нецифры
+// Вычислить правильный ответ
+// Сравнить
+// Картинка и звуки в ответ
+
+		if(res == R) {
+
+// Рандомный номер комментария 1..NOK
+			play_wav('ok');
+
+			pic("ok.png");
+
+			next();
+			inp0();
+		}
+		else {
+	
+			play_wav('err');
+
+			pic("err.png");
+			inp0();
+		}
+
+
+	});
+	
+
+    $("#next").click(function(){
+
+		next();
+
+	});
+
+	function set1(s1, s2) {
+
+		S1 = s1;
+		S2 = s2;
+		R = +s1 + s2;
+		if(LEV > 7) R = +s1 * +s2;
+
+		var text = S1 + ' + ' + S2 + ' =';
+		if(LEV > 7) text = S1 + ' * ' + S2 + ' ='; 
+
+		$("#task").text(text);
+
+		$("#code").text('#' + NE);
+	}
+
+	function inp0() {
+
+		$("#inp").val("");
+	}
+
+
+	function next() {
+
+		NUM = +NUM + 1;
+		if(NUM > MAX) NUM = 1;
+
+		NE = +NE + 1;
+
+		var a = SS[NUM];
+
+		set1(a[0], a[1]);		
+	}                                                  
+
+	function pic(pic) {
+		$("#pic").attr("src", pic);
+	}
+
+	function play_wav(res) {
+		var id = res + nok();
+
+		OUT = id;
+		$("#out").text(OUT);
+
+		document.getElementById(id).play();
+	}
+
+	function compareRandom(a, b) {
+		return Math.random() - 0.5;
+	}
+
+	function nok() {
+		var num = Math.round(Math.random() * NOK);
+		if (num > NOK) num = NOK;
+		if (num < 1) num = 1;
+		return num.toString();
+	}
+
+	function s1() {
+
+		for (var i = 0; i <= 10; i++) {
+			for (var j = 0; j <= 10; j++) {
+
+				var r = +i + j;
+				if(r > 10) continue;
+
+				var a = [i, j];
+				SS.push(a);				
+		}}
+	}
+
+	function s2() { 
+
+		for (var i = 1; i <= 9; i++) {
+			for (var j = 1; j <= 9; j++) {
+
+				var r = +i + j;
+				if(r <= 10) continue;
+
+				var a = [i, j];
+				SS.push(a);				
+		}}
+
+	}
+
+	function s3() { 
+
+		for (var i = 1; i <= 20; i++) {
+			for (var j = 1; j <= 20; j++) {
+
+				var r = +i + j;
+				if(r < 10) continue;
+				if(r > 20) continue;
+
+				var a = [i, j];
+				SS.push(a);				
+		}}
+
+	}
+
+	function s4() { 
+
+		for (var i = 1; i <= 9; i++) {
+			for (var j = 1; j <= 9; j++) {
+
+				i1 = +i * 10;
+				j1 = +j * 10;
+
+				var r = +i1 + j1;
+				if(r < 10) continue;
+				if(r > 100) continue;
+
+				var a = [i1, j1];
+				SS.push(a);				
+		}}
+
+	}
+
+	function s5() { 
+
+		for (var i = 1; i <= 100; i++) {
+			for (var j = 1; j <= 100; j++) {
+
+
+				var r = +i + j;
+				if(r < 10) continue;
+				if(r > 100) continue;
+
+				var a = [i, j];
+				SS.push(a);				
+		}}
+
+	}
+
+	function s6() { 
+
+		for (var i = 1; i <= 9; i++) {
+			for (var j = 1; j <= 9; j++) {
+
+				i1 = +i * 100;
+				j1 = +j * 100;
+
+				var r = +i1 + +j1;
+				if(r < 100) continue;
+				if(r > 1000) continue;
+
+				var a = [i1, j1];
+				SS.push(a);				
+		}}
+
+	}
+
+	function s7() { 
+
+		for (var i = 100; i <= 1000; i++) {
+			for (var j = 100; j <= 1000; j++) {
+
+
+				var r = +i + j;
+				if(r > 1000) continue;
+
+				var a = [i, j];
+				SS.push(a);				
+		}}
+
+	}
+
+	function s8() { 
+
+		for (var i = 1; i <= 9; i++) {
+			for (var j = 1; j <= 9; j++) {
+
+
+				var r = +i * +j;
+				if(r > 100) continue;
+
+				var a = [i, j];
+				SS.push(a);				
+		}}
+
+	}
+
+	function set_lev() { 
+
+		SS = [];
+
+		if(LEV == 1) s1();
+		if(LEV == 2) s2();
+		if(LEV == 3) s3();
+		if(LEV == 4) s4();
+		if(LEV == 5) s5();
+		if(LEV == 6) s6();
+		if(LEV == 7) s7();
+		if(LEV == 8) s8();
+
+		MAX = SS.length - 1;
+		SS.sort(compareRandom);
+
+		next();
+
+		NUM = 0;
+		NE = NE - 1;
+
+// Заголовок
+		$("#h1").text(tit[LEV]);
+// Оменить выделение для всех
+		$(".lev").css("background-color", "");
+// Назначить выделение для одного
+		$("#r" + LEV).css("background-color", "orange");
+
+	}
+
+
+});
+
+</script>
+
+</body>
+</html>
