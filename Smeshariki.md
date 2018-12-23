@@ -12,11 +12,25 @@
 
 [Наука для детей - Законы физики во Вселенной. Сборник](https://www.youtube.com/watch?v=PWoxIx3V-co)
 
+[Сборник о других планетах](https://www.youtube.com/watch?v=gQr-GL4K8-k) (59)
+
+[Сборник о Вселенной](https://www.youtube.com/watch?v=GA0YfvhrllY) (59)
+
+[Сборник серий о планете Земля.](https://www.youtube.com/watch?v=O6pkKV3Ljuc) (59)
+
+[Сборник серий об изобретениях](https://www.youtube.com/watch?v=8csi8o8OQ78) (59)
+
 ## Биология и ботаника
 
 [Наука для детей - Иммунитет и ДНК. Биология. Сборник](https://www.youtube.com/watch?v=5uNYWimUyTw)
 
 [Наука для детей - Всё о растениях. Ботаника. Сборник](https://www.youtube.com/watch?v=REsJn14264A)
+
+[Сборник по биологии](https://www.youtube.com/watch?v=qGZxe874p98) (59)
+
+[Ботаника - сборник](https://www.youtube.com/watch?v=hwVFca6A0CU) (71)
+
+[Сборник по медицине](https://www.youtube.com/watch?v=QQGjJJK-ujg) (71)
 
 ## Химия
 
@@ -40,3 +54,6 @@
 [Наука для детей - Мозг и рецепторы](https://www.youtube.com/watch?v=25Q-sFE3W2Y)
 
 [Наука для детей - Для чего нам нужен сон?](https://www.youtube.com/watch?v=dFJ8OxioXVk)
+
+[Сезон "Гуманитарные технологии"](https://www.youtube.com/watch?v=JqnPLRofqRc) (59)
+
