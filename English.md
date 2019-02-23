@@ -1,6 +1,7 @@
 # It's a long way
 ## [Английский язык для детей и начинающих](https://www.youtube.com/playlist?list=PLQibKLHeEDwLaIuoeVgw-BP3-ExSlRv13)
 
+## Видео
 * [Вступление](https://www.youtube.com/watch?v=CyQFlo8CquY)
 * [Урок 1](https://www.youtube.com/watch?v=vSzgn-7YHFY)
 * [Урок2/1](https://www.youtube.com/watch?v=n3R_ZDVRhLs)
@@ -41,5 +42,7 @@
 * [Урок 28](https://www.youtube.com/watch?v=exTSdH85sMY)
 * [Заключение](https://www.youtube.com/watch?v=4SZ7Pcebyq0)
 
-
+## Аудио
+ * [Морозова Т.А. It`s a long way. Аудиокурс для начинающих 6-8 лет](https://www.twirpx.com/file/1979864/)
+ 
 
