@@ -1,8 +1,13 @@
 # It's a long way
 
+* Сайт: [Самоучитель английского для детей и родителей](http://www.morozova-way.com/)
+* [Ссылки](http://www.morozova-way.com/blank-3)
+
 ## Видео
 
-## [Английский язык для детей и начинающих](https://www.youtube.com/playlist?list=PLQibKLHeEDwLaIuoeVgw-BP3-ExSlRv13)
+### [Канал на youtube.com](https://www.youtube.com/c/SRpictures)
+### [Английский язык для детей и начинающих](https://www.youtube.com/playlist?list=PLQibKLHeEDwLaIuoeVgw-BP3-ExSlRv13)
+
 
 * [Вступление](https://www.youtube.com/watch?v=CyQFlo8CquY)
 * [Урок 1](https://www.youtube.com/watch?v=vSzgn-7YHFY)
