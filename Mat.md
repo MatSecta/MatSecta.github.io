@@ -3,7 +3,7 @@
  * [Фрактал - cистема кружков олимпиадной математики](https://fractalclub.ru/)
  * [Центр развивающих кружков Shift](http://shift-spb.ru/)
  
- ## Ссылки
+## Ссылки
   * https://vk.com/almatkr
   * https://math123.ru/
   * https://matclass.ru/urok/
@@ -14,7 +14,7 @@
   * http://www.problems.ru/
   * http://zaba.ru/
   
-  ## История и методология
+## История и методология
    * http://altruism.ru/sengine.cgi/5/7/8/12/14/
    * https://mathlife.ru/traning
    
